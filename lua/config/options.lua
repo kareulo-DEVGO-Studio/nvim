@@ -1,0 +1,23 @@
+vim.opt.breakindent = true
+vim.opt.clipboard = 'unnamedplus'
+vim.opt.cursorline = true
+vim.opt.expandtab = true
+vim.opt.hlsearch = false
+vim.opt.ignorecase = true
+vim.opt.inccommand = 'split'
+vim.opt.mouse = ''
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.scrolloff = 999
+vim.opt.shiftwidth = 2
+vim.opt.shortmess:append { W = true, I = true, c = true, C = true }
+vim.opt.showmode = false
+vim.opt.signcolumn = 'yes'
+vim.opt.smartcase = true
+vim.opt.smartindent = true
+vim.opt.softtabstop = 2
+vim.opt.tabstop = 2
+vim.opt.termguicolors = true
+vim.opt.timeoutlen = 250
+vim.opt.undofile = true
+vim.opt.wrap = false
