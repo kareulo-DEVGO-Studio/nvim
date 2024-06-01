@@ -76,6 +76,7 @@ return {
     cmd = { 'LspInfo', 'LspInstall', 'LspStart' },
     event = { 'BufNewFile', 'BufReadPost', 'BufWritePost' },
     dependencies = {
+      'SmiteshP/nvim-navic',
       'hrsh7th/cmp-nvim-lsp',
       'williamboman/mason-lspconfig.nvim',
       {
@@ -87,7 +88,7 @@ return {
       local lsp_zero = require 'lsp-zero'
       lsp_zero.extend_lspconfig()
 
-      lsp_zero.on_attach(function(_, bufnr)
+      lsp_zero.on_attach(function(client, bufnr)
         vim.keymap.set('n', '<Leader>ca', vim.lsp.buf.code_action, { buffer = bufnr })
         vim.keymap.set('n', '<Leader>rn', vim.lsp.buf.rename, { buffer = bufnr })
         vim.keymap.set('n', 'K', vim.lsp.buf.hover, { buffer = bufnr })
@@ -95,13 +96,17 @@ return {
         vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { buffer = bufnr })
         vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, { buffer = bufnr })
         vim.keymap.set('n', 'gr', vim.lsp.buf.references, { buffer = bufnr })
+
+        if client.server_capabilities['documentSymbolProvider'] then
+          require('nvim-navic').attach(client, bufnr)
+        end
       end)
 
       lsp_zero.set_sign_icons {
         error = '',
-        warn = '',
         hint = '',
         info = '',
+        warn = '',
       }
 
       require('mason-lspconfig').setup {
