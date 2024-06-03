@@ -1,18 +1,22 @@
 return {
   'nvim-telescope/telescope.nvim',
   version = false,
-  event = 'VimEnter',
   keys = {
-    { '<Leader><Leader>', '<CMD>Telescope buffers<CR>' },
-    { '<Leader>f.', '<CMD>Telescope oldfiles<CR>' },
-    { '<Leader>fd', '<CMD>Telescope diagnostics<CR>' },
-    { '<Leader>ff', '<CMD>Telescope find_files<CR>' },
-    { '<Leader>fg', '<CMD>Telescope live_grep<CR>' },
-    { '<Leader>fw', '<CMD>Telescope grep_string<CR>' },
+    {
+      '<Leader>fb',
+      '<CMD>Telescope buffers<CR>',
+    },
+    {
+      '<Leader>ff',
+      '<CMD>Telescope find_files<CR>',
+    },
+    {
+      '<Leader>fg',
+      '<CMD>Telescope live_grep<CR>',
+    },
   },
   dependencies = {
     'nvim-lua/plenary.nvim',
-    'nvim-telescope/telescope-ui-select.nvim',
     'nvim-tree/nvim-web-devicons',
     {
       'nvim-telescope/telescope-fzf-native.nvim',
@@ -27,7 +31,6 @@ return {
 
     require('telescope').setup {
       defaults = {
-        borderchars = { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
         mappings = {
           i = {
             ['<C-d>'] = false,
@@ -45,14 +48,8 @@ return {
           },
         },
       },
-      extensions = {
-        ['ui-select'] = {
-          require('telescope.themes').get_dropdown(),
-        },
-      },
     }
 
     require('telescope').load_extension 'fzf'
-    require('telescope').load_extension 'ui-select'
   end,
 }

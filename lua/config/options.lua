@@ -1,5 +1,4 @@
 vim.opt.breakindent = true
-vim.opt.clipboard = 'unnamedplus'
 vim.opt.cursorline = true
 vim.opt.expandtab = true
 vim.opt.hlsearch = false
@@ -11,6 +10,7 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.ruler = false
 vim.opt.scrolloff = 999
+vim.opt.sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions'
 vim.opt.shiftwidth = 2
 vim.opt.shortmess:append { W = true, I = true, c = true, C = true }
 vim.opt.showmode = false
@@ -20,7 +20,7 @@ vim.opt.smartindent = true
 vim.opt.softtabstop = 2
 vim.opt.tabstop = 2
 vim.opt.termguicolors = true
-vim.opt.timeoutlen = 200
+vim.opt.timeoutlen = 300
 vim.opt.undofile = true
-vim.opt.updatetime = 200
+vim.opt.updatetime = 250
 vim.opt.wrap = false

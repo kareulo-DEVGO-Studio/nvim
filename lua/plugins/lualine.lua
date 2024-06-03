@@ -18,18 +18,10 @@ return {
       lualine_b = {
         'branch',
         'diff',
+        'diagnostics',
       },
       lualine_c = {
-        {
-          'diagnostics',
-          symbols = {
-            error = ' ',
-            hint = ' ',
-            info = ' ',
-            warn = ' ',
-          },
-          always_visible = true,
-        },
+        'filename',
       },
       lualine_x = {
         'encoding',
