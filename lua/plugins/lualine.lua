@@ -1,9 +1,7 @@
 return {
   'nvim-lualine/lualine.nvim',
   event = 'VeryLazy',
-  dependencies = {
-    'nvim-tree/nvim-web-devicons',
-  },
+  dependencies = { 'nvim-tree/nvim-web-devicons' },
   opts = {
     options = {
       theme = 'catppuccin',
@@ -12,17 +10,13 @@ return {
       globalstatus = true,
     },
     sections = {
-      lualine_a = {
-        'mode',
-      },
+      lualine_a = { 'mode' },
       lualine_b = {
         'branch',
         'diff',
         'diagnostics',
       },
-      lualine_c = {
-        'filename',
-      },
+      lualine_c = { 'filename' },
       lualine_x = {
         'encoding',
         {
@@ -34,12 +28,8 @@ return {
           icons_enabled = false,
         },
       },
-      lualine_y = {
-        'progress',
-      },
-      lualine_z = {
-        'location',
-      },
+      lualine_y = { 'progress' },
+      lualine_z = { 'location' },
     },
   },
 }

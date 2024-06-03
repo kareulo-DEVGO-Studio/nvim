@@ -30,22 +30,20 @@ return {
       cmp.setup {
         preselect = 'item',
         mapping = {
-          ['<C-y>'] = cmp.mapping.confirm {
-            select = false,
-          },
+          ['<C-y>'] = cmp.mapping.confirm { select = false },
           ['<C-e>'] = cmp.mapping.abort(),
           ['<C-f>'] = cmp_action.luasnip_jump_forward(),
           ['<C-b>'] = cmp_action.luasnip_jump_backward(),
           ['<C-p>'] = cmp.mapping(function()
             if cmp.visible() then
-              cmp.select_prev_item()
+              cmp.select_prev_item { behavior = 'insert' }
             else
               cmp.complete()
             end
           end),
           ['<C-n>'] = cmp.mapping(function()
             if cmp.visible() then
-              cmp.select_next_item()
+              cmp.select_next_item { behavior = 'insert' }
             else
               cmp.complete()
             end
@@ -56,24 +54,14 @@ return {
             require('luasnip').lsp_expand(args.body)
           end,
         },
-        completion = {
-          completeopt = 'menu,menuone,noinsert',
-        },
-        formatting = lsp_zero.cmp_format {
-          details = true,
-        },
+        completion = { completeopt = 'menu,menuone,noinsert' },
+        formatting = lsp_zero.cmp_format { details = true },
         sources = {
-          {
-            name = 'nvim_lsp',
-          },
-          {
-            name = 'path',
-          },
+          { name = 'nvim_lsp' },
+          { name = 'path' },
         },
         view = {
-          docs = {
-            auto_open = false,
-          },
+          docs = { auto_open = false },
         },
       }
     end,
