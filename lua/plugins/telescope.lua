@@ -2,18 +2,9 @@ return {
   'nvim-telescope/telescope.nvim',
   version = false,
   keys = {
-    {
-      '<Leader>fb',
-      '<CMD>Telescope buffers<CR>',
-    },
-    {
-      '<Leader>ff',
-      '<CMD>Telescope find_files<CR>',
-    },
-    {
-      '<Leader>fg',
-      '<CMD>Telescope live_grep<CR>',
-    },
+    { '<Leader>fb', '<CMD>Telescope buffers<CR>' },
+    { '<Leader>ff', '<CMD>Telescope find_files<CR>' },
+    { '<Leader>fg', '<CMD>Telescope live_grep<CR>' },
   },
   dependencies = {
     'nvim-lua/plenary.nvim',

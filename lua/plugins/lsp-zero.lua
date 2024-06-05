@@ -16,10 +16,7 @@ return {
   {
     'hrsh7th/nvim-cmp',
     event = 'InsertEnter',
-    dependencies = {
-      'L3MON4D3/LuaSnip',
-      'hrsh7th/cmp-path',
-    },
+    dependencies = { 'L3MON4D3/LuaSnip' },
     config = function()
       local lsp_zero = require 'lsp-zero'
       lsp_zero.extend_cmp()
@@ -56,35 +53,23 @@ return {
         },
         completion = { completeopt = 'menu,menuone,noinsert' },
         formatting = lsp_zero.cmp_format { details = true },
-        sources = {
-          { name = 'nvim_lsp' },
-          { name = 'path' },
-        },
-        view = {
-          docs = { auto_open = false },
+        sources = { { name = 'nvim_lsp' } },
+        view = { docs = { auto_open = false } },
+        window = {
+          completion = { border = 'rounded', scrollbar = false },
+          documentation = { border = 'rounded', scrollbar = false },
         },
       }
     end,
   },
   {
     'neovim/nvim-lspconfig',
-    cmd = {
-      'LspInfo',
-      'LspInstall',
-      'LspStart',
-    },
-    event = {
-      'BufNewFile',
-      'BufReadPost',
-      'BufWritePost',
-    },
+    cmd = { 'LspInfo', 'LspInstall', 'LspStart' },
+    event = { 'BufNewFile', 'BufReadPost', 'BufWritePost' },
     dependencies = {
       'hrsh7th/cmp-nvim-lsp',
       'williamboman/mason-lspconfig.nvim',
-      {
-        'j-hui/fidget.nvim',
-        config = true,
-      },
+      { 'j-hui/fidget.nvim', config = true },
     },
     config = function()
       local lsp_zero = require 'lsp-zero'
@@ -101,19 +86,10 @@ return {
       end)
 
       require('mason-lspconfig').setup {
-        ensure_installed = {
-          'clangd',
-          'cssls',
-          'eslint',
-          'html',
-          'jsonls',
-          'lua_ls',
-          'tailwindcss',
-          'tsserver',
-        },
+        ensure_installed = { 'clangd', 'cssls', 'eslint', 'html', 'jsonls', 'lua_ls', 'tailwindcss', 'tsserver' },
         handlers = {
-          function(server_name)
-            require('lspconfig')[server_name].setup {}
+          function(server)
+            require('lspconfig')[server].setup {}
           end,
         },
       }
