@@ -86,7 +86,7 @@ return {
       end)
 
       require('mason-lspconfig').setup {
-        ensure_installed = { 'clangd', 'cssls', 'eslint', 'html', 'jsonls', 'lua_ls', 'tailwindcss', 'tsserver' },
+        ensure_installed = { 'clangd', 'eslint', 'jsonls', 'lua_ls', 'tailwindcss', 'tsserver' },
         handlers = {
           function(server)
             require('lspconfig')[server].setup {}

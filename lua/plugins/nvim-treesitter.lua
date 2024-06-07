@@ -12,6 +12,7 @@ return {
       auto_install = true,
       highlight = {
         enable = true,
+        disable = { 'tmux' },
         additional_vim_regex_highlighting = false,
       },
       indent = {

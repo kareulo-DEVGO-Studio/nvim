@@ -1,5 +1,4 @@
 vim.opt.breakindent = true
-vim.opt.cursorline = true
 vim.opt.expandtab = true
 vim.opt.hlsearch = false
 vim.opt.ignorecase = true
@@ -10,7 +9,6 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.ruler = false
 vim.opt.scrolloff = 999
-vim.opt.sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions'
 vim.opt.shiftwidth = 2
 vim.opt.shortmess:append { W = true, I = true, c = true, C = true }
 vim.opt.showmode = false
