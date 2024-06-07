@@ -3,6 +3,9 @@ if vim.opt.wrap then
   vim.keymap.set('n', 'k', "v:count ? 'k' : 'gk'", { expr = true })
 end
 
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
 vim.keymap.set('n', '<Leader>e', vim.diagnostic.open_float)
 vim.keymap.set('n', '<Leader>q', vim.diagnostic.setloclist)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)

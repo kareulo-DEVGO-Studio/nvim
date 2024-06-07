@@ -1,4 +1,5 @@
 vim.opt.breakindent = true
+vim.opt.cursorline = true
 vim.opt.expandtab = true
 vim.opt.hlsearch = false
 vim.opt.ignorecase = true

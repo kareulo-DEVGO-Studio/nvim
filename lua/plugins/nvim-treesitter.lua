@@ -10,9 +10,9 @@ return {
       ensure_installed = { 'c', 'lua', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' },
       sync_install = true,
       auto_install = true,
+      ignore_install = { 'tmux' },
       highlight = {
         enable = true,
-        disable = { 'tmux' },
         additional_vim_regex_highlighting = false,
       },
       indent = {

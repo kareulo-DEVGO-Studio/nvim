@@ -11,7 +11,12 @@ return {
   {
     'williamboman/mason.nvim',
     lazy = false,
-    config = true,
+    opts = {
+      ui = {
+        border = 'rounded',
+        height = 0.8,
+      },
+    },
   },
   {
     'hrsh7th/nvim-cmp',
